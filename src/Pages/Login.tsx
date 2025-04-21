@@ -30,6 +30,12 @@ padding: 20px 8%;
     padding: 60px;
     margin: auto;
 
+    
+@media (max-width: 800px) {
+    padding: 15px 15px;
+}
+    
+
 }
 
 h1{
@@ -128,50 +134,49 @@ function Login() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("")
-    const [loading , setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
 
-    const user_auth = async (event : any) => {
+    const user_auth = async (event: any) => {
         event.preventDefault();
         setLoading(true);
-        if(signState === "Sign In")
-        {
+        if (signState === "Sign In") {
             await login(email, password);
         }
-        else{
+        else {
             await signup(name, email, password)
         }
         setLoading(false)
     }
     return (
 
-        loading? <Loader> <img src={netflix_spinner} alt="" /></Loader> :
-        <LogoContainer>
-            <img src={Logo} alt="Logo" className='Login-logo' />
-            <div className='Login-form'>
-                <h1>{signState}</h1>
-                <form className='form'>
-                    {signState === "Sign Up" ? <input value={name} onChange={(e) => { setName(e.target.value) }} type="text " placeholder='Your name' /> : <></>}
+        loading ? <Loader> <img src={netflix_spinner} alt="" /></Loader> :
+            <LogoContainer>
+                <img src={Logo} alt="Logo" className='Login-logo' />
+                <div className='Login-form'>
+                    <h1>{signState}</h1>
+                    <form className='form'>
+                        {signState === "Sign Up" ? <input value={name} onChange={(e) => { setName(e.target.value) }} type="text " placeholder='Your name' /> : <></>}
 
-                    <input value={email} onChange={(e) => { setEmail(e.target.value) }} type="email" placeholder='Email' />
-                    <input value={password} onChange={(e) => { setPassword(e.target.value) }} type="password" placeholder='Password' />
-                    <button onClick={user_auth} type='submit'>{signState}</button>
-                    <div className="form-help">
-                        <div className="remember">
-                            <input type="checkbox" />
-                            <label htmlFor="">Remember Me</label>
+                        <input value={email} onChange={(e) => { setEmail(e.target.value) }} type="email" placeholder='Email' />
+                        <input value={password} onChange={(e) => { setPassword(e.target.value) }} type="password" placeholder='Password' />
+                        <button onClick={user_auth} type='submit'>{signState}</button>
+                        <div className="form-help">
+                            <div className="remember">
+                                <input type="checkbox" />
+                                <label htmlFor="">Remember Me</label>
+                            </div>
+                            <p>Need Help?</p>
                         </div>
-                        <p>Need Help?</p>
-                    </div>
-                </form>
-                <FormSwitch className="form-switch">
-                    {signState === "Sign In" ? <p>New to Netflix? <span onClick={() => setSignState("Sign Up")}>sign Up Now</span></p> : <p>Already have account? <span onClick={() => setSignState("Sign In")}>Sign In Now</span> </p>}
+                    </form>
+                    <FormSwitch className="form-switch">
+                        {signState === "Sign In" ? <p>New to Netflix? <span onClick={() => setSignState("Sign Up")}>sign Up Now</span></p> : <p>Already have account? <span onClick={() => setSignState("Sign In")}>Sign In Now</span> </p>}
 
 
 
-                </FormSwitch>
-            </div>
+                    </FormSwitch>
+                </div>
 
-        </LogoContainer>
+            </LogoContainer>
     )
 }
 
