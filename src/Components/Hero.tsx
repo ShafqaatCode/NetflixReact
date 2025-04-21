@@ -8,6 +8,7 @@ import TitleCards from './TitleCards'
 
 const HeroContainer = styled.div`
     position: relative;
+    /* margin-top:40px; */
 `
 
 const HeroImg = styled.img`
@@ -35,6 +36,16 @@ const HeroCaption = styled.div`
         margin-bottom: 20px;
     }
 
+    @media (max-width: 786px) {
+     p{display:none;}   
+
+     .hero-btns{
+        display: none;
+     }
+     /* padding: -200px 0; */
+    }
+
+   
 
 `
 
@@ -79,6 +90,13 @@ const ButtonContainer = styled.div`
 
 `
 
+const TitleCardWrapper = styled.div`
+     @media (max-width: 786px) {
+       display: none;
+    }
+
+`
+
 function Hero() {
     return (
         <>
@@ -91,7 +109,9 @@ function Hero() {
                         <button className='btn'><img src={play_icon} alt="Play Button" /> Play</button>
                         <button className='dark-btn btn'><img src={info_icon} alt="Info Button" />More Info</button>
                     </ButtonContainer>
+                    <TitleCardWrapper>
                     <TitleCards />
+                    </TitleCardWrapper>
                 </HeroCaption>
 
             </HeroContainer>
