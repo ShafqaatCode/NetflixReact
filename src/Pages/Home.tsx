@@ -20,7 +20,8 @@ function Home() {
         <TitleCards title={"Only on Netflix"} category={"top_rated"} />
         <TitleCards title={"Top Picks For You"} category={"popular"} />
         <TitleCards title={"Upcoming Thrills"} category={"upcoming"} />
-        <TitleCards title={"Only on Netflix"} /> {/* Defaults to "now_playing" */}
+        <TitleCards title={"Only on Netflix"} /> 
+        
       </CardsContainer>
 
       <Footer />
