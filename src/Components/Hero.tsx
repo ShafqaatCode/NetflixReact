@@ -4,6 +4,7 @@ import hero_title_img from '../../src/assets/hero_title.png'
 import play_icon from '../../src/assets/play_icon.png'
 import info_icon from '../../src/assets/info_icon.png'
 import styled from 'styled-components'
+import TitleCards from './TitleCards'
 
 const HeroContainer = styled.div`
     position: relative;
@@ -43,7 +44,7 @@ const ButtonContainer = styled.div`
     gap: 10px;
     margin-bottom: 50px;
 
-    img{
+    .btn img{
         width: 25px;
         
         /* text-align: center; */
@@ -52,6 +53,7 @@ const ButtonContainer = styled.div`
 
     button{
         /* border: 2px solid red; */
+        border: none;
         outline: none;
         padding: 8px 20px;
         display: inline-flex;
@@ -77,21 +79,24 @@ const ButtonContainer = styled.div`
 
 `
 
-
 function Hero() {
     return (
-        <HeroContainer className='hero'>
-            <HeroImg src={hero_banner} alt="" className='banner-img' />
-            <HeroCaption className='hero-caption'>
-                <img src={hero_title_img} alt="" className='banner-img' />
-                <p>Discovering his ties to a secret ancient order, a young man living in modern Istanbul embarks on a quest to save the city from an immoral enemy.</p>
-                <ButtonContainer className="hero-btns">
-                    <button><img src={play_icon} alt="Play Button" /> Play</button>
-                    <button className='dark-btn'><img src={info_icon} alt="Info Button" />More Info</button>
-                </ButtonContainer>
-            </HeroCaption>
+        <>
+            <HeroContainer className='hero'>
+                <HeroImg src={hero_banner} alt="" className='banner-img' />
+                <HeroCaption className='hero-caption'>
+                    <img src={hero_title_img} alt="" className='banner-img' />
+                    <p>Discovering his ties to a secret ancient order, a young man living in modern Istanbul embarks on a quest to save the city from an immoral enemy.</p>
+                    <ButtonContainer className="hero-btns">
+                        <button className='btn'><img src={play_icon} alt="Play Button" /> Play</button>
+                        <button className='dark-btn btn'><img src={info_icon} alt="Info Button" />More Info</button>
+                    </ButtonContainer>
+                    <TitleCards />
+                </HeroCaption>
 
-        </HeroContainer>
+            </HeroContainer>
+           
+        </>
     )
 }
 
