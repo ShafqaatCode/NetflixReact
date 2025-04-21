@@ -8,32 +8,46 @@ import { useEffect } from 'react'
 import { auth } from './firebase'
 // import { ToastContainer , toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import TvShows from './Pages/TvShows'
+import Movies from './Pages/Movies'
+
+
 
 function App() {
 
   const navigate = useNavigate();
   useEffect(() => {
-    onAuthStateChanged(auth, async (user) => {
-      if(user){
-        console.log("Logged in")
-        navigate('/')
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log("Logged in");
+        
+        if (window.location.pathname === '/login') {
+          navigate('/');
+        }
+      } else {
+        console.log("Logged out");
+        if (window.location.pathname !== '/login') {
+          navigate('/login');
+        }
       }
-      else{
-        console.log("Logged out")
-        navigate('/login')
-      }
-    })
-  } , [])
+    });
+  
+    return () => unsubscribe();
+  }, []);
+  
 
   return (
     <>
       <Routes>
+
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/tvshows' element = {<TvShows />} />
+        <Route path='/movies' element = {<Movies />} />
       </Routes>
 
     </>
   )
 }
 
-export default App
+export default App 

@@ -6,6 +6,8 @@ import ProfileIcon from '../../src/assets/profile_img.png'
 import DropDownIcon from '../../src/assets/caret_icon.svg'
 import styled from 'styled-components'
 import { logout } from '../firebase'
+import { Link } from 'react-router-dom'
+import TvShows from '../Pages/TvShows'
 
 const NavbarContainer = styled.nav`
   width: 100%;
@@ -17,6 +19,7 @@ const NavbarContainer = styled.nav`
   font-size: 14px;
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 10%, transparent);
   z-index: 10;
+  /* margin-bottom:100px; */
 `
 
 const NavbarLeft = styled.div<{ isOpen: boolean }>`
@@ -48,6 +51,14 @@ const NavbarLeft = styled.div<{ isOpen: boolean }>`
 
   ul li {
     cursor: pointer;
+    a {
+        text-decoration: none;
+        color: white;
+
+        &:hover{
+            color: gray;
+        }
+    }
   }
 `
 
@@ -129,9 +140,9 @@ function Navbar() {
       <NavbarLeft isOpen={menuOpen}>
         <img src={Logo} alt="Logo" />
         <ul>
-          <li>Home</li>
-          <li>TV Shows</li>
-          <li>Movies</li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/tvshows">TV Shows</Link></li>
+          <li><Link to="/movies">Movies</Link></li>
           <li>New & Popular</li>
           <li>My List</li>
           <li>Browse Language</li>
