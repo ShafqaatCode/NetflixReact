@@ -127,8 +127,8 @@ function Login() {
     const [loading , setLoading] = useState(false)
 
     const user_auth = async (event : any) => {
-        setLoading(true);
         event.preventDefault();
+        setLoading(true);
         if(signState === "Sign In")
         {
             await login(email, password);
