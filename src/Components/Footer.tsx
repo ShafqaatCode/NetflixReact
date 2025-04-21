@@ -21,15 +21,23 @@ const FooterContainer = styled.div`
 
 const FooterLinks = styled.ul`
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
     margin-bottom: 30px;
     list-style: none;
     cursor: pointer;
+
+
 `
 
 const FooterLi = styled.li`
-    
+    white-space: nowrap;
+    width: fit-content;
+    padding: 3px;
+    transition: background-color 0.5s;
+    &:hover{
+      background-color: rgba(66, 61, 61, 0.5);
+    }
 `
 
 const FooterIcons = styled.div`

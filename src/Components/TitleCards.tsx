@@ -20,22 +20,23 @@ const CardList = styled.div`
     display: none;
   }
 
-  &:hover {
-    p {
-      background-color: rgba(0, 0, 0, 0.5);
-      height: fit-content;
-      padding: 0 10px;
-    }
-  }
+
 
   img {
     width: 240px;
     border-radius: 4px;
     cursor: pointer;
+
+    
   }
 
   .card {
     position: relative;
+    &:hover p{
+      background-color: rgba(0, 0, 0, 0.5);
+      height: fit-content;
+      padding: 0 10px;
+    }
   }
 
   p {

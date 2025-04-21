@@ -170,7 +170,7 @@ function Navbar() {
           {menuOpen ? <CloseIcon>&#10005;</CloseIcon> : <HamburgerIcon>&#9776;</HamburgerIcon>}
         </div>
         <img src={SearchIcn} alt="search" className="Icons" />
-        <p>Children</p>
+        {/* <p>Children</p> */}
         <img src={BellIcon} alt="bell icon" className="Icons" />
         <div className="navbar-profile">
           <img src={ProfileIcon} alt="Profile icon" className="Profile" />
