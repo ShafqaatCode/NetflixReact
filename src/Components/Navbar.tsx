@@ -5,6 +5,7 @@ import BellIcon from '../../src/assets/bell_icon.svg'
 import ProfileIcon from '../../src/assets/profile_img.png'
 import DropDownIcon from '../../src/assets/caret_icon.svg'
 import styled from 'styled-components'
+import { logout } from '../firebase'
 
 const NavbarContainer = styled.nav`
   width: 100%;
@@ -149,7 +150,7 @@ function Navbar() {
           <img src={DropDownIcon} alt="dropdown ^" />
 
           <div className="dropdown">
-            <p>Sign Out</p>
+            <p onClick={()=>{logout()}}>Sign Out</p>
           </div>
         </div>
       </NavbarRight>
