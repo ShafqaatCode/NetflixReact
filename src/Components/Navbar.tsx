@@ -139,22 +139,23 @@ import { getAuth, onAuthStateChanged, User } from 'firebase/auth'
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
-  const [user , setUser] = useState<User | null> (null);
+  const [user, setUser] = useState<User | null>(null);
 
 
-  useEffect(()=>{
+  useEffect(() => {
     const auth = getAuth();
     const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
-        setUser(firebaseUser);
+      setUser(firebaseUser);
     });
 
     return () => unsubscribe();
-  },[]);
+  }, []);
 
   return (
     <NavbarContainer>
       <NavbarLeft isOpen={menuOpen}>
-        <img src={Logo} alt="Logo" />
+        <Link to="/">
+          <img src={Logo} alt="Logo" /></Link>
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/tvshows">TV Shows</Link></li>
@@ -177,8 +178,8 @@ function Navbar() {
           <img src={DropDownIcon} alt="dropdown ^" />
 
           <div className="dropdown">
-            {user ?  <span>{user.displayName || user.email}</span> :  <span>Guest</span>}
-            <p onClick={()=>{logout()}}>Sign Out</p>
+            {user ? <span>{user.displayName || user.email}</span> : <span>Guest</span>}
+            <p onClick={() => { logout() }}>Sign Out</p>
           </div>
         </div>
       </NavbarRight>
