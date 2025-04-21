@@ -12,7 +12,7 @@ const HeroContainer = styled.div`
 
 const HeroImg = styled.img`
     width: 100%;
-    /* height: 100%; */
+    
     mask-image: linear-gradient(to right, transparent, black 65%);
     -weblet-mask-image: linear-gradient(to right, transparent, black 75%);
 `

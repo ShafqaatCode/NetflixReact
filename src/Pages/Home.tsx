@@ -15,7 +15,7 @@ function Home() {
     <div>
       <Navbar />
       <Hero />
-      {/* <TitleCards /> */}
+      
       <CardsContainer className="more-cards">
         <TitleCards title={"Only on Netflix"} category={"top_rated"} />
         <TitleCards title={"Top Picks For You"} category={"popular"} />
