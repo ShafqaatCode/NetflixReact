@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 
 const Container = styled.div` 
 padding: 80px 20px; 
@@ -93,6 +94,7 @@ const TvShows = () => {
                 {renderSection("Top Rated TV Shows", tvData.topRated)}
                 {renderSection("Airing Today", tvData.airingToday)}
             </Container>
+            <Footer />
         </>
     );
 };

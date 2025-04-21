@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 
 const Container = styled.div`
 
@@ -90,6 +91,7 @@ const Movies = () => {
       {renderSection("Top Rated Movies", movieData.topRated)}
       {renderSection("Upcoming Movies", movieData.upcoming)}
     </Container>
+    <Footer />
     </div>
   );
 };
