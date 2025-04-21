@@ -7,7 +7,7 @@ import DropDownIcon from '../../src/assets/caret_icon.svg'
 import styled from 'styled-components'
 import { logout } from '../firebase'
 import { Link } from 'react-router-dom'
-import TvShows from '../Pages/TvShows'
+// import TvShows from '../Pages/TvShows'
 
 const NavbarContainer = styled.nav`
   width: 100%;
