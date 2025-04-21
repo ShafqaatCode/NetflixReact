@@ -12,6 +12,10 @@ background-image:linear-gradient(#0000007e,#0000007e), url(/background_banner.jp
 
 padding: 20px 8%;
 
+@media (max-width: 800px) {
+    padding: 5px 10px;
+}
+
 .Login-logo{
     width: 150px;
 }
