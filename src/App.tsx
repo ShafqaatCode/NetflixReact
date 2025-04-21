@@ -1,11 +1,11 @@
-import { useState } from 'react'
+
 import Home from './Pages/Home'
 import Login from './Pages/Login'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <>

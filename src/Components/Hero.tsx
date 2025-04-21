@@ -1,4 +1,4 @@
-import React from 'react'
+
 import hero_banner from '../../src/assets/hero_banner.jpg'
 import hero_title_img from '../../src/assets/hero_title.png'
 import play_icon from '../../src/assets/play_icon.png'
