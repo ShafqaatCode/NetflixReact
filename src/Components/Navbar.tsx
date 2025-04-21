@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Logo from '../../src/assets/logo.png'
 import SearchIcn from '../../src/assets/search_icon.svg'
 import BellIcon from '../../src/assets/bell_icon.svg'
@@ -98,6 +98,8 @@ const NavbarRight = styled.div`
       p {
         cursor: pointer;
         font-size: 13px;
+        white-space: nowrap;
+        border-radius: 4px;
       }
     }
 
@@ -132,8 +134,22 @@ const CloseIcon = styled.div`
   color: white;
 `
 
+import { getAuth, onAuthStateChanged, User } from 'firebase/auth'
+
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+
+  const [user , setUser] = useState<User | null> (null);
+
+
+  useEffect(()=>{
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+        setUser(firebaseUser);
+    });
+
+    return () => unsubscribe();
+  },[]);
 
   return (
     <NavbarContainer>
@@ -161,6 +177,7 @@ function Navbar() {
           <img src={DropDownIcon} alt="dropdown ^" />
 
           <div className="dropdown">
+            {user ?  <span>{user.displayName || user.email}</span> :  <span>Guest</span>}
             <p onClick={()=>{logout()}}>Sign Out</p>
           </div>
         </div>
