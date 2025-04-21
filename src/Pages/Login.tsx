@@ -2,6 +2,7 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import Logo from '../../src/assets/logo.png'
 import { login, signup } from '../firebase.js'
+import netflix_spinner from '../../src/assets/netflix_spinner.gif'
 
 
 
@@ -107,6 +108,13 @@ const FormSwitch = styled.div`
 
 `
 
+const Loader = styled.div`
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
 
 
 function Login() {
@@ -116,8 +124,10 @@ function Login() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("")
+    const [loading , setLoading] = useState(false)
 
     const user_auth = async (event : any) => {
+        setLoading(true);
         event.preventDefault();
         if(signState === "Sign In")
         {
@@ -126,8 +136,11 @@ function Login() {
         else{
             await signup(name, email, password)
         }
+        setLoading(false)
     }
     return (
+
+        loading? <Loader> <img src={netflix_spinner} alt="" /></Loader> :
         <LogoContainer>
             <img src={Logo} alt="Logo" className='Login-logo' />
             <div className='Login-form'>
