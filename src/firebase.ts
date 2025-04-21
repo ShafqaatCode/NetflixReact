@@ -45,6 +45,7 @@ const signup = async (name: string, email: string, password: string): Promise<vo
 const login = async (email: string, password: string): Promise<void> => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
+    alert("YOu Signed in")
   } catch (error) {
     console.log(error);
     alert(error);
