@@ -5,7 +5,7 @@ import { useFormStatus } from 'react-dom'
 
 
 const LogoContainer = styled.div`
-height: 100vh;
+/* height: 100vh; */
 background-image:linear-gradient(#0000007e,#0000007e), url(/background_banner.jpg) ;
 
 padding: 20px 8%;
@@ -131,7 +131,7 @@ function Login() {
                     </div>
                 </form>
                 <FormSwitch className="form-switch">
-                    {signState === "Sign In" ? <p>New to Netflix? <span>sign Up Now</span></p> :<p>Already have account? <span>Sign In Now</span> </p>}
+                    {signState === "Sign In" ? <p>New to Netflix? <span onClick={()=> setSignState("Sign Up")}>sign Up Now</span></p> :<p>Already have account? <span onClick={()=> setSignState("Sign In")}>Sign In Now</span> </p>}
                     
                     
                     
