@@ -9,7 +9,7 @@ padding: 80px 20px;
 
 `;
 const SectionTitle = styled.h2` 
-margin: 30px 0 10px; color: #fff; `;
+margin: 30px 0 15px; color: #fff; `;
 const ScrollList = styled.div`
   display: flex;
   gap: 10px;
