@@ -17,8 +17,9 @@ const ScrollList = styled.div`
   }
 
   img {
-    width: 200px;
+    width: 300px;
     border-radius: 6px;
+    cursor: pointer;
   }
 
   .card {
@@ -30,6 +31,11 @@ const ScrollList = styled.div`
       left: 10px;
       color: white;
       font-weight: bold;
+    }
+
+    p:hover{
+        background-color: rgba(0,0,0,0.5);
+        padding: 7px;
     }
   }
 `;
