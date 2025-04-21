@@ -23,7 +23,7 @@ const CardList = styled.div`
 
 
   img {
-    width: 240px;
+    width: 250px;
     border-radius: 4px;
     cursor: pointer;
 
