@@ -16,16 +16,15 @@ function Home() {
       <Navbar />
       <Hero />
       {/* <TitleCards /> */}
-
       <CardsContainer className="more-cards">
-        <TitleCards title={"Only on Netflix"} />
-        <TitleCards title={"Top Picks For You"}/>
-        <TitleCards title={"Upcomming Thrills"}/>
-        <TitleCards title={"Only on Netflix"}/>
+        <TitleCards title={"Only on Netflix"} category={"top_rated"} />
+        <TitleCards title={"Top Picks For You"} category={"popular"} />
+        <TitleCards title={"Upcoming Thrills"} category={"upcoming"} />
+        <TitleCards title={"Only on Netflix"} /> {/* Defaults to "now_playing" */}
       </CardsContainer>
 
       <Footer />
-      
+
 
 
     </div>
