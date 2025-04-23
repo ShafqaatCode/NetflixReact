@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 
@@ -47,6 +48,13 @@ const CardList = styled.div`
     color: white;
     font-weight: bold;
   }
+
+  a{
+    text-decoration: none;
+    color: white;
+  }
+
+
 `;
 
 
@@ -54,7 +62,7 @@ type Movie = {
   id: number;
   backdrop_path: string;
   original_title: string;
-  name?: string; 
+  name?: string;
 };
 
 
@@ -76,47 +84,47 @@ const TitleCards: React.FC<TitleCardsProps> = ({ title = "Popular on Netflix", c
 
   useEffect(() => {
     const refCurrent = cardRef.current;
-  
+
     const fetchData = async () => {
-        try {
-          const response = await fetch(
-            `https://api.themoviedb.org/3/movie/${category ? category : "now_playing"}?api_key=2835f4128d35529d11d4677c5be4f16b&language=en-US&page=1`
-          );
-          const data = await response.json();
-          setApiData(data.results || []);
-        } catch (error) {
-          console.error("Fetch error:", error);
-        }
-      };
-      
-  
+      try {
+        const response = await fetch(
+          `https://api.themoviedb.org/3/movie/${category ? category : "now_playing"}?api_key=2835f4128d35529d11d4677c5be4f16b&language=en-US&page=1`
+        );
+        const data = await response.json();
+        setApiData(data.results || []);
+      } catch (error) {
+        console.error("Fetch error:", error);
+      }
+    };
+
+
     fetchData();
-  
+
     if (refCurrent) {
       refCurrent.addEventListener('wheel', handleWheel, { passive: false });
     }
-  
+
     return () => {
       if (refCurrent) {
         refCurrent.removeEventListener('wheel', handleWheel);
       }
     };
-  }, [category]); 
-  
+  }, [category]);
+
 
   return (
     <TitleCardContainer>
       <h2>{title}</h2>
       <CardList ref={cardRef}>
-        {apiData.map((card) => (
-          <div className="card" key={card.id}>
+        {apiData.map((card) => {
+          return <Link to={`/player/${card.id}`} className="card" key={card.id}>
             <img
               src={`https://image.tmdb.org/t/p/w500${card.backdrop_path}`}
               alt={card.original_title || card.name}
             />
             <p>{card.original_title || card.name}</p>
-          </div>
-        ))}
+          </Link>
+        })}
       </CardList>
     </TitleCardContainer>
   );
