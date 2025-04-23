@@ -25,6 +25,15 @@ const PlayerContainer = styled.div`
       width: 70%;
       height: 70%;
     }
+
+
+    @media (max-width: 786px ){
+      iframe{
+        margin-top: 60px;
+        width: 90%;
+        height: 90%;
+      }
+    }
 `
 
 const Info = styled.div`
@@ -33,6 +42,16 @@ const Info = styled.div`
   justify-content: space-between;
   width: 70%;
   margin: 10px 0;
+
+  @media (max-width: 786px )
+  {
+    flex-direction: column;
+    align-items: start;
+    width: 90%;
+    p{
+      margin: 2px 0;
+    }
+  }
 `
 
 function Player() {
