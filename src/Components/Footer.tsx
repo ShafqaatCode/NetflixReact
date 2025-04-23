@@ -26,6 +26,14 @@ const FooterLinks = styled.ul`
     margin-bottom: 30px;
     list-style: none;
     cursor: pointer;
+    border: 2px solid red;
+     
+    @media (max-width:786px)
+    {
+      /* grid-template-columns: 1fr; */
+      
+      justify-items: center;
+    }
 
 
 `
@@ -35,6 +43,9 @@ const FooterLi = styled.li`
     width: fit-content;
     padding:0 15px;
     transition: background-color 0.5s;
+    text-align: left;
+
+    
     &:hover{
       background-color: rgba(66, 61, 61, 0.5);
       border-radius: 5px;
@@ -43,9 +54,13 @@ const FooterLi = styled.li`
 
 const FooterIcons = styled.div`
     display: flex;
+    align-items: center;
+    justify-content:center;
     gap: 20px;
     margin: 40px 0;
-    /* border: 2px solid gray; */
+    border: 2px solid gray;
+
+   
 
     img{
 
