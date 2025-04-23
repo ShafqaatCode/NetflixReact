@@ -12,13 +12,14 @@ import {
   addDoc,
 } from "firebase/firestore";
 
+
 const firebaseConfig = {
-  apiKey: "AIzaSyAszInO-Sxrq75M86c4w_SQRh8AM6rmfoQ",
-  authDomain: "netflixclone-7c70f.firebaseapp.com",
-  projectId: "netflixclone-7c70f",
-  storageBucket: "netflixclone-7c70f.firebasestorage.app",
-  messagingSenderId: "10712405445",
-  appId: "1:10712405445:web:6ff8e651fdb1b011a1e7ac",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 
