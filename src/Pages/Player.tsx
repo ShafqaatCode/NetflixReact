@@ -18,6 +18,7 @@ const PlayerContainer = styled.div`
       left:20px;
       width: 50px;
       cursor: pointer;
+      z-index: 1000;
     }
 
     iframe{
@@ -87,7 +88,7 @@ function Player() {
   return (
     <div>
       <PlayerContainer>
-        <img src={back_arrow_icon} onClick={()=> {navigate(-2)}} alt="" />
+        <img src={back_arrow_icon} onClick={()=> {navigate('/')}} alt="" />
         <iframe title='trailer' allowFullScreen src={`https://www.youtube.com/embed/${apiData.key}`}  ></iframe>
         <Info>
           <p>{apiData.published_at.slice(0, 10)}</p>
