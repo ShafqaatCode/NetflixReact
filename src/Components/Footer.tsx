@@ -26,7 +26,7 @@ const FooterLinks = styled.ul`
     margin-bottom: 30px;
     list-style: none;
     cursor: pointer;
-    border: 2px solid red;
+    /* border: 2px solid red; */
      
     @media (max-width:786px)
     {
@@ -58,7 +58,7 @@ const FooterIcons = styled.div`
     justify-content:center;
     gap: 20px;
     margin: 40px 0;
-    border: 2px solid gray;
+    /* border: 2px solid gray; */
 
    
 
